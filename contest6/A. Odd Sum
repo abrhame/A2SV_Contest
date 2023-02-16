@@ -1,0 +1,11 @@
+#https://codeforces.com/gym/426933/problem/A
+
+    t = int(input())
+    a = list(map(int, input().split()))
+    a.sort()
+    f = sum(a[:t])
+    s = sum(a[t:])
+    if f!= s:
+        print(*a)
+    else:
+        print(-1)
