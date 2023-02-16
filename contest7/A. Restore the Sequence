@@ -1,0 +1,15 @@
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    a = list(map(int,input().split()))
+    l = 0
+    r = n-1
+    ans = []
+    while l < r:
+        ans.append(a[l])
+        ans.append(a[r])
+        l+=1
+        r-=1
+    if n%2 != 0:
+        ans.append(a[l])
+    print(*ans)
