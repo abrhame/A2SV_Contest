@@ -11,4 +11,3 @@ for i in range(k,n):
         com = temp
         ans = i-k+1
 print(ans+1)
-    
