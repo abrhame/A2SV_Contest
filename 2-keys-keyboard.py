@@ -1,17 +1,14 @@
 class Solution:
     def minSteps(self, n: int) -> int:
-        fact = []
-        d = 2
-        count = 0
-        while d * d <= n:
-            while n % d == 0:
-                fact.append(d)
-                n //= d
-            d += 1
-        if n > 1:
-            fact.append(n)
-        # print(fact)
-
-        for i in range(len(fact)):
-            count += fact[i]
-        return count
+        cur = 1
+        clipboard = 0
+        steps = 0
+        while cur < n:
+            # perform a copy paste operation 
+            if n % cur == 0:
+                clipboard = cur
+                steps += 1
+            # perform a paste operation
+            cur += clipboard
+            steps += 1
+        return steps
